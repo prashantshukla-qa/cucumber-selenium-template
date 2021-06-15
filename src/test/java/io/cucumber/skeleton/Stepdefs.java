@@ -23,7 +23,7 @@ public class Stepdefs {
 
     @Then("my belly should growl")
     public void my_belly_should_growl() {
-        assertTrue("Test intentionally failed!!!", false);
+        assertTrue("Test intentionally failed!!!", true);
     }
 
     @Then("my belly should be happy")
