@@ -30,4 +30,9 @@ public class Stepdefs {
     public void my_belly_should_be_happy() {
         assertTrue("Test intentionally force passed!!!", true);
     }
+
+    @Then("my belly should be fail")
+    public void my_belly_should_be_fail() {
+        assertTrue("Test intentionally force passed!!!", true);
+    }
 }
