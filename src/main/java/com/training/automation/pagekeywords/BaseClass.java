@@ -1,14 +1,9 @@
 package com.training.automation.pagekeywords;
 
-import com.fasterxml.jackson.databind.JsonSerializable.Base;
 import com.training.automation.utils.Screenshot;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class BaseClass {
