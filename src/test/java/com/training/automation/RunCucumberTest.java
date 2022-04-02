@@ -1,4 +1,4 @@
-package io.cucumber.skeleton;
+package com.training.automation;
 
 import org.junit.runner.RunWith;
 
