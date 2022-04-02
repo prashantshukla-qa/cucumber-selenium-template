@@ -1,5 +1,6 @@
 package com.training.automation.pagekeywords;
 
+import com.fasterxml.jackson.databind.JsonSerializable.Base;
 import com.training.automation.utils.Screenshot;
 
 import org.openqa.selenium.WebDriver;
@@ -14,25 +15,15 @@ public class BaseClass {
 
     private WebDriver driver;
 
-    LoginPage loginPage;
-    LandingPage landingPage;
-    Screenshot screenshot;
+    public LoginPage loginPage;
+    public LandingPage landingPage;
+    public Screenshot screenshot;
 
-
-    private final String URL = "http://automationpractice.com/index.php";
-
-    @Before
-    public void setup() {
-        WebDriverManager.chromedriver().setup();
+    public BaseClass() {
         this.driver = new ChromeDriver();
         this.loginPage = new LoginPage(driver);
         this.landingPage = new LandingPage(driver);
         this.screenshot = new Screenshot(driver);
-    }
-
-    @After
-    public void teardown() {
-        this.driver.quit();
     }
 
     public WebDriver getDriver() {
@@ -40,10 +31,14 @@ public class BaseClass {
     }
 
     public void launchApplication() {
-        launchApplication(this.URL);
+        launchApplication("https://the-internet.herokuapp.com/");
     }
 
     public void launchApplication(String url) {
         this.driver.get(url);
     }    
+
+    public void closeTestSession() {
+        this.driver.quit();
+    }
 }

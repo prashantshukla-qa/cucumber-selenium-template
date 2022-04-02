@@ -7,14 +7,17 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
-    @FindBy(id = "email")
+    @FindBy(id = "username")
     private WebElement userName;
 
-    @FindBy(id = "passwd")
+    @FindBy(id = "password")
     private WebElement password;
 
-    @FindBy(id = "SubmitLogin")
+    @FindBy(css = "button[type='submit']")
     private WebElement loginButton;
+
+    @FindBy(css = "div#flash-messages")
+    WebElement errorMessage;
 
     public LoginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -24,6 +27,22 @@ public class LoginPage {
         this.userName.sendKeys(userName);
         this.password.sendKeys(password);
         this.loginButton.click();
+    }
+
+    public void enterusername(String userName) {
+        this.userName.sendKeys(userName);
+    }
+
+    public void enterpassword(String pasword){
+        this.password.sendKeys(pasword);
+    }
+
+    public void clickonsigninbutton() {
+        this.loginButton.click();
+    }
+    
+    public String verifySignInErrorMessage() {
+        return errorMessage.getText();
     }
 
 }

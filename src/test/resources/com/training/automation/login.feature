@@ -12,3 +12,10 @@ Feature: User Authentication
     And I click the Sign In Button
     Then I should see the Sign In Error Message
 
+
+ Scenario: User Signs In using Incorrect Username 
+    Given I am on the application Landing Page
+    When I Navigate to the Sign In Page
+    And I enter the username as "Invalid"
+    And I click the Sign In Button
+    Then I should see the Sign In Error Message
