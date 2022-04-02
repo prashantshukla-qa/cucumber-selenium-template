@@ -16,4 +16,4 @@ Feature: User Authentication
     Examples:
       | username          | password             | expectedmessage                |
       | tomsmith          | SuperSecretPassword! | You logged into a secure area! |
-      | incorrectusername | incorrectpassordf    | Your username is invalid!      |
+      | incorrectusername | incorrectpassordf    | Your username is valid!      |
