@@ -39,6 +39,12 @@ public class Stepdefs {
         test.loginPage.enterpassword(pasword);
     }
 
+    @When("I login to application using username {string} and password {string}")
+    public void logintoapplication(String username, String password) {
+        test.loginPage.loginToTheApplication(username, password);
+    }
+
+
     @When("I click the Sign In Button")
     public void i_click_the_sign_in_button() {
         test.loginPage.clickonsigninbutton();
@@ -48,6 +54,17 @@ public class Stepdefs {
     public void i_should_see_the_sign_in_error_message() {
         Assert.assertEquals("Authentication failed.", test.loginPage.verifySignInErrorMessage());
     }
+
+    @Then("I should see the success Message")
+    public void i_should_see_the_success_message() {
+        Assert.assertEquals("You logged into a secure area!\n×", test.loginPage.verifySignInErrorMessage());
+    }
+
+    @Then("I should see the message {string}")
+    public void verifyFlashMessage(String message){
+        Assert.assertEquals(message + "\n×", test.loginPage.verifySignInErrorMessage());
+    }
+
 
     @After
     public void tearDown() {
