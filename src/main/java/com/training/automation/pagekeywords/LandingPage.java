@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LandingPage {
 
-    @FindBy(css = "a.login")
+    @FindBy(css = "a[href='/login']")
     private WebElement loginLink;
 
     public LandingPage(WebDriver driver) {
