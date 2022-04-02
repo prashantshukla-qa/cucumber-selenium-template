@@ -5,6 +5,8 @@
 # Compiled class file
 *.class
 .gradle/
+.apt_generated/
+.apt_generated_tests/
 # IDE settings files
 
 ##VSCODE
