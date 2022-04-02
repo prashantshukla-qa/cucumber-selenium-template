@@ -6,6 +6,6 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = { "pretty", "html" }, tags = "@datadriven")
+@CucumberOptions(plugin = { "pretty", "html:target/cucumber-report.html" }, tags = "@datadriven")
 public class RunCucumberTest {
 }
